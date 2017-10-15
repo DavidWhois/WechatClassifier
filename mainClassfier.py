@@ -2,10 +2,12 @@ from readdata import *
 from numpy import *
 from sklearn.naive_bayes import GaussianNB
 #创建字典
+# todo：更换为nltk的词袋模型
 dic = ['我','你','嗯','。','天','坐','车','当','年','裤','衣','照','分','牌','子','图',
 '吊','影','球','来','王','发','哈','当','对','麻','痹','玩','意','宅','听','曲','果']
 
 #读取数据,构造labels
+#todo：这里需要改成可以选择待分类的人的个数n
 data1 = readdata('liu.txt','刘处')
 labels1 = zeros(len(data1))
 labels1 = list(labels1)
@@ -33,10 +35,13 @@ print(shape(train_features))
 print(train_labels)
 print(shape(train_labels))
 
+#todo:这里最好比较一下svm和NB分类的效果，包括训练时间，score等
+#todo:更进一步的，改用逻辑回归实现在线系统？
 #调用naive_bayes方法训练
 clf = GaussianNB()
 clf.fit(train_features,train_labels)
 
+#todo:单独写一个test文件
 testStr = '我在睡觉麻痹我家传统11点前睡觉，7点起床这句没看懂天天发这个表情的必然是我胡大师麻痹从外婆家取大伯家接我爸然后送姨夫回家最后再回家开了将近3个小时车'
 test_features=zeros([1,len(dic)])
 for i in range(len(dic)):
