@@ -1,5 +1,14 @@
 import jieba
 
+# todo：这里需要改成可以选择待分类的人的个数n,在get_classifier中传入待分类人的聊天记录文件
+# todo:装到一个list中读入
+# 实现思路：使用sys.path获取当前目录，再获取datas目录下的所有文件名list，遍历这个list，导入文件
+# n = len(list)就是要分类的个数
+
+# todo:def read_all() 调用readdata(),return data,target(m*n)
+# target = np.zeros((m,n))
+# 在第j类的target[:,j]=1
+
 
 def read_data(filename, username):
     data = []

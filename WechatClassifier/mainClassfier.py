@@ -10,10 +10,7 @@ def get_classifier():
     print('dict_words num:', len(dic))
     # 读取数据,构造labels
 
-    # todo：这里需要改成可以选择待分类的人的个数n,在get_classifier中传入待分类人的聊天记录文件
-    # todo:装到一个list中读入
-    # 实现思路：使用sys.path获取当前目录，再获取datas目录下的所有文件名list，遍历这个list，导入文件
-    # n = len(list)就是要分类的个数
+
     data1 = read_data('datas/liu.txt', '刘处')
     labels1 = zeros(len(data1))
     labels1 = list(labels1)
@@ -37,7 +34,6 @@ def get_classifier():
     train_labels = array(train_labels)
 
     # todo:这里最好比较一下svm和NB分类训练时间
-    # todo:更进一步的，改用逻辑回归实现在线系统？
     # 调用naive_bayes方法训练
     start_time = time.time()
     clf = GaussianNB()
