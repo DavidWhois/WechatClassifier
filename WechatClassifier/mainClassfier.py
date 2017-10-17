@@ -12,6 +12,8 @@ def get_classifier():
 
     # todo：这里需要改成可以选择待分类的人的个数n,在get_classifier中传入待分类人的聊天记录文件
     # todo:装到一个list中读入
+    # 实现思路：使用sys.path获取当前目录，再获取datas目录下的所有文件名list，遍历这个list，导入文件
+    # n = len(list)就是要分类的个数
     data1 = read_data('datas/liu.txt', '刘处')
     labels1 = zeros(len(data1))
     labels1 = list(labels1)
