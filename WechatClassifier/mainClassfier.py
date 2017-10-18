@@ -33,7 +33,7 @@ def get_classifier():
     train_features = array(train_features)
     train_labels = array(train_labels)
 
-    # todo:这里最好比较一下svm和NB分类训练时间
+    # todo:改成svm，用一下那个自动调参数的工具，这样也算调过超参数了嘛！
     # 调用naive_bayes方法训练
     start_time = time.time()
     clf = GaussianNB()
@@ -41,4 +41,3 @@ def get_classifier():
     end_time = time.time()
     print('training time: %10.3f ms' % (end_time-start_time))
     return clf
-
